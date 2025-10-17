@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillForge &mdash; Grow your web skills</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-container">
+        <a class="brand" href="#top" aria-label="SkillForge home">SkillForge</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-icon" aria-hidden="true"></span>
+        </button>
+        <nav id="primary-nav" class="primary-nav">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#highlights">Highlights</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#start">Get Started</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">Skill-building made simple</p>
+            <h1 id="hero-title">
+              Learn the fundamentals of modern web development
+            </h1>
+            <p>
+              Explore a lightweight, responsive starter project that showcases
+              clean HTML, scalable CSS, and accessible patterns you can reuse on
+              your own sites.
+            </p>
+            <div class="hero-actions">
+              <a class="cta" href="#start">Start your journey</a>
+              <a class="ghost" href="#roadmap">See the roadmap</a>
+            </div>
+          </div>
+          <figure class="hero-figure" aria-hidden="true">
+            <img
+              src="images/create-new-file.png"
+              alt="Screenshot of a GitHub interface"
+            />
+            <figcaption>Take the first step with clear guidance.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="container two-column">
+          <div>
+            <h2>What you will learn</h2>
+            <p>
+              This demo walks you through building a cohesive landing page with
+              semantic structure, responsive layouts, and a focus on clarity.
+              Every section uses approachable patterns you can adapt to fit your
+              next project.
+            </p>
+            <ul class="pill-list">
+              <li>Semantic page organization</li>
+              <li>Consistent spacing scale</li>
+              <li>Accessible navigation</li>
+            </ul>
+          </div>
+          <aside class="info-card" aria-label="Project stats">
+            <h3>Project at a glance</h3>
+            <dl>
+              <div>
+                <dt>Build time</dt>
+                <dd>&lt; 1 hour</dd>
+              </div>
+              <div>
+                <dt>Core files</dt>
+                <dd>2 (HTML + CSS)</dd>
+              </div>
+              <div>
+                <dt>Focus areas</dt>
+                <dd>Layout, typography, responsiveness</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section id="highlights" class="section highlights">
+        <div class="container">
+          <h2>Highlights of the build</h2>
+          <div class="card-grid">
+            <article class="feature-card">
+              <h3>Responsive by default</h3>
+              <p>
+                The layout adapts gracefully from mobile to desktop with fluid
+                typography and CSS grid.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>Readable styling</h3>
+              <p>
+                Utility variables and consistent spacing make the stylesheet
+                easy to navigate and extend.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>Accessible choices</h3>
+              <p>
+                Color contrast, focus states, and reduced-motion defaults ensure
+                an inclusive experience.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="roadmap" class="section roadmap">
+        <div class="container">
+          <h2>Roadmap to replicate this page</h2>
+          <ol class="timeline">
+            <li>
+              <h3>Plan the structure</h3>
+              <p>
+                Sketch the sections you need and choose meaningful IDs for
+                in-page navigation.
+              </p>
+            </li>
+            <li>
+              <h3>Build the markup</h3>
+              <p>
+                Use semantic elements such as <code>&lt;header&gt;</code>,
+                <code>&lt;main&gt;</code>, and <code>&lt;section&gt;</code> to
+                organize the content.
+              </p>
+            </li>
+            <li>
+              <h3>Layer on styles</h3>
+              <p>
+                Define CSS variables, spacing utilities, and responsive
+                breakpoints to polish the layout.
+              </p>
+            </li>
+            <li>
+              <h3>Enhance accessibility</h3>
+              <p>
+                Add focus outlines, reduced-motion tweaks, and descriptive
+                labels for interactive elements.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section testimonials">
+        <div class="container">
+          <h2>What learners are saying</h2>
+          <div class="testimonials-grid">
+            <blockquote>
+              <p>
+                “I rebuilt the entire layout in an afternoon. The structure made
+                responsive design feel effortless.”
+              </p>
+              <cite>&mdash; Alex, Front-end Beginner</cite>
+            </blockquote>
+            <blockquote>
+              <p>
+                “The focus on accessibility helped me audit my own projects. The
+                checklist format is gold.”
+              </p>
+              <cite>&mdash; Priya, UX Designer</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section id="start" class="section callout">
+        <div class="container callout-content">
+          <div>
+            <h2>Ready to build something great?</h2>
+            <p>
+              Download the files, personalize the copy, and publish your own
+              polished landing page in minutes.
+            </p>
+          </div>
+          <form class="signup" aria-label="Sign up for project updates">
+            <label for="email" class="sr-only">Email address</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+            <button type="submit">Notify me</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>
+          &copy; <span id="year"></span> SkillForge. Built with HTML &amp; CSS.
+        </p>
+        <a class="back-to-top" href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const nav = document.getElementById("primary-nav");
+      const yearSpan = document.getElementById("year");
+
+      function syncNavState(expanded) {
+        if (!navToggle || !nav) return;
+        navToggle.setAttribute("aria-expanded", expanded);
+        nav.classList.toggle("open", expanded);
+        document.body.classList.toggle("no-scroll", expanded);
+      }
+
+      if (navToggle && nav) {
+        navToggle.addEventListener("click", () => {
+          const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+          syncNavState(!isExpanded);
+        });
+
+        nav.addEventListener("click", (event) => {
+          if (event.target instanceof HTMLAnchorElement) {
+            syncNavState(false);
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            syncNavState(false);
+          }
+        });
+      }
+
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    </script>
+  </body>
+</html>
