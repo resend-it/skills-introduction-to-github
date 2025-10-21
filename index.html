@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Simple Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Welcome to My Simple Website</h1>
+      <p>Building skills one step at a time with clean, responsive design.</p>
+      <a class="cta" href="#learn-more">Learn More</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="learn-more" class="section">
+      <div class="container two-column">
+        <div>
+          <h2>About This Page</h2>
+          <p>
+            This simple website demonstrates the basics of modern web development. It uses semantic HTML,
+            responsive layout techniques, and a clean visual style powered by CSS.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Quick Highlights</h3>
+          <ul>
+            <li>Fully responsive design</li>
+            <li>Accessible color contrasts</li>
+            <li>Reusable utility classes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>What You&rsquo;ll Find</h2>
+        <div class="features">
+          <article class="feature">
+            <h3>Clean Structure</h3>
+            <p>Organized, readable HTML that makes it easy to understand the page layout.</p>
+          </article>
+          <article class="feature">
+            <h3>Modern Styling</h3>
+            <p>Thoughtful typography, balanced spacing, and subtle shadows for a polished look.</p>
+          </article>
+          <article class="feature">
+            <h3>Responsive Layout</h3>
+            <p>Flexible design that adapts smoothly to phones, tablets, and desktop screens.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> My Simple Website. Built with HTML &amp; CSS.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
