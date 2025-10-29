@@ -1,0 +1,19 @@
+{
+  "name": "luminaflow-marketing-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx live-server --port=4173 --open=index.html",
+    "build:css": "npx lightningcss styles.css -o dist/styles.min.css --minify",
+    "build:js": "npx terser script.js -c -m -o dist/script.min.js",
+    "build": "rimraf dist && shx mkdir -p dist/assets && npm run build:css && npm run build:js && shx cp index.html dist/index.html && shx cp 404.html dist/404.html && shx cp -r assets dist/assets"
+  },
+  "devDependencies": {
+    "lightningcss-cli": "^1.22.0",
+    "live-server": "^1.2.2",
+    "rimraf": "^5.0.5",
+    "shx": "^0.3.4",
+    "terser": "^5.24.0"
+  }
+}

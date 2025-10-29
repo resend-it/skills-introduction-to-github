@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found | LuminaFlow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, rgba(91, 75, 255, 0.25), transparent 60%), var(--color-bg);
+    }
+    .error-card {
+      text-align: center;
+      max-width: 480px;
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+      background: var(--color-surface);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+      box-shadow: var(--shadow-soft);
+    }
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    p {
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-card">
+    <div class="badge">404</div>
+    <h1>Looks like you’re off the map</h1>
+    <p>The page you’re after doesn’t exist, but LuminaFlow can guide you back to unforgettable journeys.</p>
+    <a class="btn btn-primary" href="/">Return home</a>
+  </div>
+</body>
+</html>

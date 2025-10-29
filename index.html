@@ -1,73 +1,517 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Simple Website</title>
+  <title>LuminaFlow | Orchestrate unforgettable journeys</title>
+  <meta name="description" content="LuminaFlow delivers intelligent experience orchestration so every customer journey feels bespoke and effortless.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LuminaFlow | Orchestrate unforgettable journeys">
+  <meta property="og:description" content="Intelligent experience orchestration for modern product teams.">
+  <meta property="og:url" content="https://luminflow.example.com">
+  <meta property="og:image" content="assets/social-card.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LuminaFlow | Orchestrate unforgettable journeys">
+  <meta name="twitter:description" content="Intelligent experience orchestration for modern product teams.">
+  <meta name="twitter:image" content="assets/social-card.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (() => {
+      const stored = localStorage.getItem('luminaflow-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="preload" href="assets/hero-device.svg" as="image" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LuminaFlow",
+    "url": "https://luminflow.example.com",
+    "logo": "assets/social-card.svg",
+    "description": "Intelligent experience orchestration for modern product teams.",
+    "sameAs": [
+      "https://www.linkedin.com/company/luminaflow",
+      "https://twitter.com/luminaflow"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Support",
+      "email": "hello@luminflow.example.com"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "LuminaFlow",
+    "description": "LuminaFlow delivers intelligent experience orchestration with adaptive journeys, unified insights, and enterprise-grade reliability.",
+    "brand": {
+      "@type": "Brand",
+      "name": "LuminaFlow"
+    },
+    "offers": [{
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "79",
+      "priceValidUntil": "2025-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": "https://luminflow.example.com/pricing"
+    }]
+  }
+  </script>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Welcome to My Simple Website</h1>
-      <p>Building skills one step at a time with clean, responsive design.</p>
-      <a class="cta" href="#learn-more">Learn More</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container flex-between">
+      <a class="brand" href="#home" aria-label="LuminaFlow home">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 48 48" class="brand-mark">
+          <defs>
+            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#5B4BFF" />
+              <stop offset="100%" stop-color="#F8A22F" />
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#logoGradient)" opacity="0.85"></rect>
+          <path d="M15 30c1.8 2.8 4.9 4.5 8.2 4.5 5.5 0 10-4.5 10-10S28.7 14.5 23.2 14.5c-3.3 0-6.4 1.7-8.2 4.5" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" fill="none" />
+          <circle cx="33.5" cy="15" r="4" fill="#ffffff" opacity="0.85"></circle>
+        </svg>
+        <span class="brand-name">LuminaFlow</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#showcase">Showcase</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+          <span aria-hidden="true" class="theme-icon">☀️</span>
+        </button>
+        <a class="btn btn-primary" href="#pricing">Get Started</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="nav-line"></span>
+        <span class="nav-line"></span>
+        <span class="nav-line"></span>
+      </button>
     </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile primary"></nav>
   </header>
-
-  <main>
-    <section id="learn-more" class="section">
-      <div class="container two-column">
-        <div>
-          <h2>About This Page</h2>
-          <p>
-            This simple website demonstrates the basics of modern web development. It uses semantic HTML,
-            responsive layout techniques, and a clean visual style powered by CSS.
-          </p>
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-background" aria-hidden="true">
+        <div class="hero-parallax"><div class="hero-gradient"></div></div>
+        <div class="hero-noise"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-copy" data-animate="fade-up">
+          <p class="eyebrow">Intelligent experience orchestration for modern product teams.</p>
+          <h1>Orchestrate unforgettable customer journeys</h1>
+          <p class="lead">LuminaFlow unifies data, design, and automation so every interaction feels bespoke and effortless.</p>
+          <div class="button-group">
+            <a class="btn btn-primary" href="#pricing">Get Started</a>
+            <a class="btn btn-ghost" href="#showcase">Watch Demo</a>
+          </div>
+          <div class="hero-proof">
+            <div class="avatar-group" aria-hidden="true">
+              <span class="avatar"></span>
+              <span class="avatar"></span>
+              <span class="avatar"></span>
+            </div>
+            <p><strong>2,400+</strong> teams craft journeys with LuminaFlow.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>Quick Highlights</h3>
-          <ul>
-            <li>Fully responsive design</li>
-            <li>Accessible color contrasts</li>
-            <li>Reusable utility classes</li>
-          </ul>
+        <div class="hero-visual" data-animate="fade-up" data-animate-delay="100">
+          <picture>
+            <source srcset="assets/hero-device.svg" type="image/svg+xml">
+            <img src="assets/hero-device.svg" alt="LuminaFlow experience orchestration dashboard" width="540" height="420" loading="lazy">
+          </picture>
         </div>
       </div>
     </section>
 
-    <section class="section alt">
-      <div class="container">
-        <h2>What You&rsquo;ll Find</h2>
-        <div class="features">
-          <article class="feature">
-            <h3>Clean Structure</h3>
-            <p>Organized, readable HTML that makes it easy to understand the page layout.</p>
-          </article>
-          <article class="feature">
-            <h3>Modern Styling</h3>
-            <p>Thoughtful typography, balanced spacing, and subtle shadows for a polished look.</p>
-          </article>
-          <article class="feature">
-            <h3>Responsive Layout</h3>
-            <p>Flexible design that adapts smoothly to phones, tablets, and desktop screens.</p>
-          </article>
+    <section class="section features" id="features">
+      <div class="container section-header" data-animate="fade-up">
+        <span class="badge">Why LuminaFlow</span>
+        <h2>Craft, automate, and optimize every touchpoint</h2>
+        <p>Modular capabilities meet enterprise guardrails so your team can deliver bespoke moments at global scale.</p>
+      </div>
+      <div class="container feature-grid">
+        <article class="feature-card glass" data-animate="fade-up">
+          <span class="icon" aria-hidden="true">📊</span>
+          <h3>Unified Insights</h3>
+          <p>Bring product, support, and growth signals together for a single narrative on customer health trends.</p>
+        </article>
+        <article class="feature-card glass" data-animate="fade-up" data-animate-delay="50">
+          <span class="icon" aria-hidden="true">🧭</span>
+          <h3>Adaptive Journeys</h3>
+          <p>Automate contextual paths that respond to intent, channel, and lifecycle stage in milliseconds.</p>
+        </article>
+        <article class="feature-card glass" data-animate="fade-up" data-animate-delay="100">
+          <span class="icon" aria-hidden="true">🤝</span>
+          <h3>Team Co-Pilot</h3>
+          <p>Collaborate with guided workflows, shared workspaces, and AI-assisted co-creation for faster alignment.</p>
+        </article>
+        <article class="feature-card glass" data-animate="fade-up" data-animate-delay="150">
+          <span class="icon" aria-hidden="true">🛡️</span>
+          <h3>Privacy-First Guardrails</h3>
+          <p>Respect compliance by design with automated consent tracking and granular data residency controls.</p>
+        </article>
+        <article class="feature-card glass" data-animate="fade-up" data-animate-delay="200">
+          <span class="icon" aria-hidden="true">⚙️</span>
+          <h3>Enterprise Reliability</h3>
+          <p>Deliver sub-second experiences backed by active-active infrastructure, observability, and self-healing pipelines.</p>
+        </article>
+        <article class="feature-card glass" data-animate="fade-up" data-animate-delay="250">
+          <span class="icon" aria-hidden="true">🧩</span>
+          <h3>Limitless Extensibility</h3>
+          <p>Connect your ecosystem with low-code builders, open APIs, and event-driven automations that scale.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section showcase" id="showcase">
+      <div class="container section-header" data-animate="fade-up">
+        <span class="badge">Showcase</span>
+        <h2>See the orchestration engine in action</h2>
+        <p>Snapshots from our demo environment highlight the craft behind every personalized journey.</p>
+      </div>
+      <div class="container gallery-grid">
+        <figure class="gallery-card" data-animate="fade-up">
+          <img src="assets/gallery-1.svg" srcset="assets/gallery-1.svg 1x, assets/gallery-1.svg 2x" alt="Workflow canvas preview" width="420" height="280" loading="lazy" role="button" data-lightbox="Workflow canvas preview">
+          <figcaption>Visualize multi-channel experiences with composable nodes.</figcaption>
+        </figure>
+        <figure class="gallery-card" data-animate="fade-up" data-animate-delay="50">
+          <img src="assets/gallery-2.svg" srcset="assets/gallery-2.svg 1x, assets/gallery-2.svg 2x" alt="Audience insights dashboard" width="420" height="280" loading="lazy" role="button" data-lightbox="Audience insights dashboard">
+          <figcaption>Track cohort performance and journey health in real-time.</figcaption>
+        </figure>
+        <figure class="gallery-card" data-animate="fade-up" data-animate-delay="100">
+          <img src="assets/gallery-3.svg" srcset="assets/gallery-3.svg 1x, assets/gallery-3.svg 2x" alt="Automation builder" width="420" height="280" loading="lazy" role="button" data-lightbox="Automation builder">
+          <figcaption>Launch branching automations with guardrails and AI suggestions.</figcaption>
+        </figure>
+        <figure class="gallery-card" data-animate="fade-up" data-animate-delay="150">
+          <img src="assets/gallery-4.svg" srcset="assets/gallery-4.svg 1x, assets/gallery-4.svg 2x" alt="Customer journey timeline" width="420" height="280" loading="lazy" role="button" data-lightbox="Customer journey timeline">
+          <figcaption>Replay entire customer journeys to pinpoint moments that matter.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section stats" id="proof">
+      <div class="container stats-grid">
+        <article class="stat glass" data-animate="fade-up">
+          <span class="stat-value" data-target="98">0</span>
+          <p>Customer satisfaction rating from enterprise deployments.</p>
+        </article>
+        <article class="stat glass" data-animate="fade-up" data-animate-delay="50">
+          <span class="stat-value" data-target="2400">0</span>
+          <p>High-growth teams scaling personalization with LuminaFlow.</p>
+        </article>
+        <article class="stat glass" data-animate="fade-up" data-animate-delay="100">
+          <span class="stat-value" data-target="37">0</span>
+          <p>Global data regions ensuring compliance wherever you operate.</p>
+        </article>
+        <article class="stat glass" data-animate="fade-up" data-animate-delay="150">
+          <span class="stat-value" data-target="12">0</span>
+          <p>Weeks to value with guided onboarding and dedicated co-pilots.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="testimonials">
+      <div class="container section-header" data-animate="fade-up">
+        <span class="badge">Testimonials</span>
+        <h2>Loved by teams building the future</h2>
+        <p>Leaders across product, marketing, and operations rely on LuminaFlow to orchestrate standout experiences.</p>
+      </div>
+      <div class="container testimonials-grid">
+        <article class="testimonial-card glass" data-animate="fade-up">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            “LuminaFlow gave us shared context across teams. We ship updates with the exact narrative our customers expect.”
+          </blockquote>
+          <p class="author">Maya Chen <span>VP Product, Halo Robotics</span></p>
+        </article>
+        <article class="testimonial-card glass" data-animate="fade-up" data-animate-delay="50">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            “The automation builder feels like a design canvas. We iterate live journeys faster than we can test them.”
+          </blockquote>
+          <p class="author">Isaac Moreno <span>Growth Lead, Aurora Fintech</span></p>
+        </article>
+        <article class="testimonial-card glass" data-animate="fade-up" data-animate-delay="100">
+          <div class="stars" role="img" aria-label="4.5 out of 5 stars">★★★★☆</div>
+          <blockquote>
+            “Compliance used to slow us down. LuminaFlow’s guardrails let us scale globally without second guessing.”
+          </blockquote>
+          <p class="author">Priya Desai <span>Chief Operations Officer, Origin Labs</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="container section-header" data-animate="fade-up">
+        <span class="badge">Pricing</span>
+        <h2>Flexible plans that grow with you</h2>
+        <p>Switch between monthly and yearly billing to see the value your team unlocks.</p>
+      </div>
+      <div class="container pricing-toggle" role="group" aria-label="Billing cadence">
+        <button type="button" class="toggle-option is-active" data-billing="monthly" aria-pressed="true">Monthly</button>
+        <button type="button" class="toggle-option" data-billing="yearly" aria-pressed="false">Yearly <span class="save-tag">Save 15%</span></button>
+      </div>
+      <div class="container pricing-grid">
+        <article class="pricing-card" data-plan="starter" data-animate="fade-up">
+          <h3>Starter</h3>
+          <p class="price"><span class="currency">$</span><span class="amount" data-monthly="39" data-yearly="33">39</span><span class="cycle">/mo</span></p>
+          <p class="subtitle">Launch orchestrated journeys with core automation.</p>
+          <ul>
+            <li>Journey canvas with 20 steps</li>
+            <li>5,000 monthly active users</li>
+            <li>Real-time dashboards</li>
+            <li>Email + in-app channels</li>
+            <li>AI copy assistant</li>
+            <li>Security essentials</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost plan-cta" data-monthly-link="#contact" data-yearly-link="#contact">Start building</a>
+        </article>
+        <article class="pricing-card featured" data-plan="pro" data-animate="fade-up" data-animate-delay="50">
+          <div class="flag">Most popular</div>
+          <h3>Pro</h3>
+          <p class="price"><span class="currency">$</span><span class="amount" data-monthly="79" data-yearly="67">79</span><span class="cycle">/mo</span></p>
+          <p class="subtitle">Scale personalization with adaptive journeys and advanced intelligence.</p>
+          <ul>
+            <li>Unlimited journey steps</li>
+            <li>Omni-channel orchestration</li>
+            <li>Predictive scoring</li>
+            <li>Audience experimentation suite</li>
+            <li>Team workspaces &amp; approvals</li>
+            <li>Priority support</li>
+            <li>Data warehouse sync</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary plan-cta" data-monthly-link="#contact" data-yearly-link="#contact">Upgrade to Pro</a>
+        </article>
+        <article class="pricing-card" data-plan="enterprise" data-animate="fade-up" data-animate-delay="100">
+          <h3>Enterprise</h3>
+          <p class="price"><span class="currency">$</span><span class="amount" data-monthly="149" data-yearly="127">149</span><span class="cycle">/mo</span></p>
+          <p class="subtitle">Unlock bespoke governance, compliance, and deployment options.</p>
+          <ul>
+            <li>Dedicated customer strategist</li>
+            <li>Private cloud deployment</li>
+            <li>Custom data residency</li>
+            <li>Advanced security suite</li>
+            <li>Unlimited API throughput</li>
+            <li>Premium integrations</li>
+            <li>24/7 enterprise support</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost plan-cta" data-monthly-link="#contact" data-yearly-link="#contact">Talk to sales</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container section-header" data-animate="fade-up">
+        <span class="badge">FAQ</span>
+        <h2>Answers for curious builders</h2>
+        <p>Everything you need to know before orchestrating your next journey.</p>
+      </div>
+      <div class="container faq-list" role="region" aria-label="Frequently asked questions">
+        <div class="accordion-item" data-animate="fade-up">
+          <h3>
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-1" id="faq-trigger-1">
+              How quickly can we launch our first journey?
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1">
+            <p>Teams typically launch in under two weeks with guided onboarding, curated templates, and on-demand support.</p>
+          </div>
+        </div>
+        <div class="accordion-item" data-animate="fade-up" data-animate-delay="50">
+          <h3>
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-2" id="faq-trigger-2">
+              Can LuminaFlow integrate with our existing stack?
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2">
+            <p>Yes. Use native connectors, open APIs, and webhooks to sync data bi-directionally across your ecosystem.</p>
+          </div>
+        </div>
+        <div class="accordion-item" data-animate="fade-up" data-animate-delay="100">
+          <h3>
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-3" id="faq-trigger-3">
+              How does pricing adjust as we scale?
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3">
+            <p>Choose your plan and billing cadence today, and adjust usage tiers anytime with transparent prorated billing.</p>
+          </div>
+        </div>
+        <div class="accordion-item" data-animate="fade-up" data-animate-delay="150">
+          <h3>
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-4" id="faq-trigger-4">
+              What compliance certifications do you support?
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4">
+            <p>We maintain SOC 2 Type II, ISO 27001, GDPR, and HIPAA readiness with continuous third-party audits.</p>
+          </div>
+        </div>
+        <div class="accordion-item" data-animate="fade-up" data-animate-delay="200">
+          <h3>
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-5" id="faq-trigger-5">
+              Do you offer professional services?
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5">
+            <p>Our co-pilot program includes journey strategy, campaign execution, and on-call experimentation partners.</p>
+          </div>
+        </div>
+        <div class="accordion-item" data-animate="fade-up" data-animate-delay="250">
+          <h3>
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-panel-6" id="faq-trigger-6">
+              How does LuminaFlow handle data residency?
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-panel-6" role="region" aria-labelledby="faq-trigger-6">
+            <p>Select from 37 global data regions, enforce tenant isolation, and monitor flows with compliance dashboards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner" id="cta">
+      <div class="container banner-content" data-animate="fade-up">
+        <h2>Design journeys customers can’t forget</h2>
+        <p>Request a guided tour and see LuminaFlow tailor every interaction in real-time.</p>
+        <a class="btn btn-primary" href="#contact">Book a strategy session</a>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container section-header" data-animate="fade-up">
+        <span class="badge">Contact</span>
+        <h2>Let’s co-create your next experience</h2>
+        <p>Share how you orchestrate today and we’ll craft a bespoke walkthrough for your team.</p>
+      </div>
+      <div class="container contact-grid">
+        <form class="contact-form glass" id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Ada Lovelace" required autocomplete="name">
+            <span class="field-error" role="alert"></span>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email">
+            <span class="field-error" role="alert"></span>
+          </div>
+          <div class="form-field">
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your goals" required></textarea>
+            <span class="field-error" role="alert"></span>
+          </div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="contact-details" data-animate="fade-up">
+          <div class="glass info-card">
+            <h3>Stay in flow</h3>
+            <p>Email <a href="mailto:hello@luminflow.example.com">hello@luminflow.example.com</a> or schedule a call with our experience strategists.</p>
+            <ul>
+              <li><strong>Hours:</strong> Monday–Friday, 8am–6pm PT</li>
+              <li><strong>Offices:</strong> San Francisco · Amsterdam · Singapore</li>
+              <li><strong>Community:</strong> Join 12k+ builders in our private Slack.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> My Simple Website. Built with HTML &amp; CSS.</p>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#home" aria-label="LuminaFlow home">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 48 48" class="brand-mark"><defs><linearGradient id="logoGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5B4BFF" /><stop offset="100%" stop-color="#F8A22F" /></linearGradient></defs><rect x="2" y="2" width="44" height="44" rx="12" fill="url(#logoGradientFooter)" opacity="0.85"></rect><path d="M15 30c1.8 2.8 4.9 4.5 8.2 4.5 5.5 0 10-4.5 10-10S28.7 14.5 23.2 14.5c-3.3 0-6.4 1.7-8.2 4.5" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" fill="none" /><circle cx="33.5" cy="15" r="4" fill="#ffffff" opacity="0.85"></circle></svg>
+          <span class="brand-name">LuminaFlow</span>
+        </a>
+        <p class="footer-copy">Built for teams who believe every interaction should feel artfully human.</p>
+      </div>
+      <div>
+        <h3>Navigate</h3>
+        <ul class="footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#showcase">Showcase</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <ul class="footer-links footer-social">
+          <li>
+            <a href="mailto:hello@luminflow.example.com" class="footer-social-link">
+              <span class="footer-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M3.5 6.75A2.75 2.75 0 0 1 6.25 4h11.5A2.75 2.75 0 0 1 20.5 6.75v10.5A2.75 2.75 0 0 1 17.75 20H6.25A2.75 2.75 0 0 1 3.5 17.25V6.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4.5 7.5 12 12.75 19.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Email</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/luminaflow" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <span class="footer-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M7.5 9.75V19.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7.5 5.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" fill="currentColor"/><path d="M12.5 19.5V9.75" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M12.5 12.75c0-1.66 1.35-3 3-3s3 1.34 3 3V19.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              </span>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/luminaflow" class="footer-social-link" aria-label="Twitter" target="_blank" rel="noopener">
+              <span class="footer-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6.5c-.58.26-1.2.43-1.85.5a3.2 3.2 0 0 0 1.4-1.77 6.37 6.37 0 0 1-2.02.78 3.17 3.17 0 0 0-5.4 2.17c0 .25.03.5.08.73a9 9 0 0 1-6.55-3.3 3.17 3.17 0 0 0 .98 4.23 3.1 3.1 0 0 1-1.44-.4v.04c0 1.53 1.1 2.81 2.56 3.1-.27.08-.55.12-.83.12-.2 0-.4-.02-.59-.06.4 1.25 1.57 2.16 2.95 2.19a6.37 6.37 0 0 1-3.94 1.36c-.26 0-.52-.01-.77-.04A8.99 8.99 0 0 0 11 19.5c5.8 0 8.98-4.8 8.98-8.97 0-.14 0-.28-.01-.42A6.34 6.34 0 0 0 20 6.5Z" fill="currentColor"/></svg>
+              </span>
+              <span>Twitter</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul class="footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> LuminaFlow. All rights reserved.</p>
+      <a class="back-to-top" href="#top">Back to top</a>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <div class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="Close gallery"></button>
+    <img src="" alt="" class="lightbox-image" loading="lazy">
+    <p class="lightbox-caption"></p>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
